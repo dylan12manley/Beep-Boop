@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <title>Week5GotmeWeak</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="gitInfo">
+        <h4>Always add a .gitignore file to project directory before initial commit</h4>
+        <p>.gitignore file should have these three lines:<br><br>node_modules/<br>.DS_Store<br>dist/</p>
+        <p class="comment">We need to create the .gitignore file and specify which files shouldn't be tracked before committing.</p>
+        <p>To stop git from tracking a file first add that file to the .gitignore file<br>next, run "git rm -r --cached [FILE-NAME]", <br>where [FILE-NAME] is the name of the file Git will no longer track</p>
+        <p class="comment"></p>
+      </div>
+      <div id="npmInfo">
+        <h4>Node package manager<h5>or just npm</h5></h4>
+        <p>"npm init -y"<br>This creates a file called package.json in the project's root directory.</p>
+        <p>This is the <a href="https://webpack.js.org/">webpack</a> documentation.<p>
+        <p>"npm install webpack@4.39.3 --save-dev --save-exact"<br>This will install webpack and add the dependency to our package.json file.</p>
+        <p class="comment">**The "--save-exact" flag ensures that we save the exact version of webpack to our dev dependencies.<br>**the "--save-dev" flag specifies that we want webpack to be a development dependency <br>**All of the dependencies we install with the "--save-dev" flag will be included in devDependencies.</p>
+        <p>"npm install webpack-cli@3.3.8 --save-dev"<br>This package will allow us to use webpack from the command line.</p>
+        <p>"npm install"<br>This will automatically add the correct Node modules to the project.</p>
+        <p>"npm prune"<br>The command will ensure only dependencies listed in the manifest are actually installed (while others are removed).</p>
+      </div>
+      <div class="webpackInfo">
+        <h4>Webpack uses a dependency graph to recursively manage an application's assets</h4>
+        <p>We commonly use  main.js as an entry point, where we include our interface logic.<br>Webpack needs this entry point in order to recursively gather all the other files</p>
+        <p class="undreline">make a file in top level of project like this<br>"webpack.config.js"<br>const path = require('path');<br><br> module.exports = {<br>entry: './src/main.js',<br>output: {<br>filename: 'bundle.js',<br>path:<br> path.resolve(__dirname, 'dist')<br>}<br>};</p>
+        <p>"import" is a way to import a piece of code from one file into another. <br>Used in the top lines of the entry point, aka main.js </p>
+        <p>"export" is a way to export a piece of code from one file into another. <br>Used in the top lines of a buisness logic page, aka function-logic.js </p>
+      </div>
+    </div>
+
+  </body>
+</html>
